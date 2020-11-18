@@ -9,8 +9,8 @@ services:
     environment:
       DATABASE_URI: mysql+pymysql://root:password@database:3306/users
       SECRET KEY: password
-  database:
-    image: database
+  mysql:
+    image: mysql:5.7
     build: ./database
     environment:
       - MYSQL_ROOT_PASSWORD=Password1234!  
