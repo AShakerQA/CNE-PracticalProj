@@ -9,9 +9,18 @@ services:
     environment:
       DATABASE_URI: mysql+pymysql://root:password@database:3306/users
       SECRET KEY: password
-    database:
-      image: database
-      build: ./database
-      environment:
-        - MYSQL_USER=root
-        - MYSQL_ROOT_PASSWORD=Password1234!  
+  database:
+    image: database
+    build: ./database
+    environment:
+      - MYSQL_ROOT_PASSWORD=Password1234!  
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
