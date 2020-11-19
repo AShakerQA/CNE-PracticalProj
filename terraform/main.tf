@@ -24,7 +24,7 @@ module "EC2_node" {
 
 resource "aws_db_subnet_group" "default" {
   name = "main"
-  subnet_ids = [aws_subnet.cidr_block_2, aws_subnet.cidr_block_3]
+  subnet_ids = [aws_subnet.subnet_b.id, aws_subnet.subnet_c.id]
 
   tags = {
     Name = "DB privaten subnets"
@@ -43,6 +43,7 @@ resource "aws_db_instance" "production" {
   password             = "Password1234!"
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot = "true"
+  db_subnet_group_name = aws_db_subnet_group.default.name
 }
 
 resource "aws_db_instance" "test" {
@@ -56,6 +57,7 @@ resource "aws_db_instance" "test" {
   password             = "Password1234!"
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot = "true"
+  db_subnet_group_name = aws_db_subnet_group.default.name
 }
 
 
