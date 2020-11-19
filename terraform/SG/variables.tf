@@ -1,8 +1,8 @@
-variables "web_sg_name" {
+variable "web_sg_name" {
   default = "default_web_sg"
 }
 
-variables "sg_web_description" {
+variable "sg_web_description" {
   default = "allow ssh connection"
 }
 

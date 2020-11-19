@@ -63,8 +63,3 @@ resource "aws_db_instance" "test" {
 }
 
 
-
-
-
-
-}

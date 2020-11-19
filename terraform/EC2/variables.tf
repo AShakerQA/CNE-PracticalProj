@@ -7,7 +7,7 @@ variable "ami_id" {
   default = "ami-0dc8d444ee2a42d8a"
 }
 
-variables "key_name" {
+variable "key_name" {
   default = "shakepc"
 }
 
