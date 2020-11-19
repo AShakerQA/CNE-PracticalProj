@@ -13,7 +13,13 @@
   roles:
   - nginx
 
-- hosts: aws-cli
+- hosts: awscli
   become: true
   roles:
-  - aws-cli
+  - awscli
+
+- hosts: all
+  become: true
+  tasks:
+    - name: install kubectl
+      script: /home/shaker_abdul/sfia2/cne-sfia2-brief/kubernetes_install.sh
