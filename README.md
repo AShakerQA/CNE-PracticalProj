@@ -103,3 +103,8 @@ Completing the stretch goals should yield an infrastructure diagram similar to t
 ![stretch-digram](https://i.imgur.com/Q5zljVl.png)
 
 **Good luck!**
+
+need to export ec2-ip to jenkins: 
+export ec2-ip=$(terraform output ec2-ip)
+
+info is then passed to ansible via echo $(ec2-ip)
