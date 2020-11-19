@@ -15,11 +15,11 @@ module "sg_node" {
   ingress_ports = 22
 }
 
-module "EC2_node" {
+module "ec2" {
   source                 = "./EC2"
   name                   = "ec2"
   subnet_id              = module.vpc.subnet_a_id
-  vpc_security_group_ids = [module.web_sg.subnet_id]
+  vpc_security_group_ids = [module.sg_node.sg_id]
 }
 
 resource "aws_db_subnet_group" "default" {
