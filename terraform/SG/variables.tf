@@ -11,8 +11,9 @@ variable "open_internet" {
 }
 
 variable "ingress_ports" {
+  type = list(number)
   description = "ingress ports"
-  default = 22
+  default = [22, 80, 3306, 8080]
 }
 
 variable "egress_ports" {
