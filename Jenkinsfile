@@ -8,5 +8,11 @@ pipeline{
       sh 'sudo docker build -t abdulshaker/database ./database/'
       }
     }
+    stage('push to dockerhub'){
+      sh 'sudo docker login -u abdulshaker -p ${password}
+      sudo docker push abdulshaker/backend
+      sudo docker push abdulshaker/frontend
+      sudo docker push abdulshaker/database
+    }
   }
 }
