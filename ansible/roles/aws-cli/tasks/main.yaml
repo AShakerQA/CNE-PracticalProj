@@ -1,0 +1,12 @@
+- name: Install pip and curl
+  apt:
+    name: ['python3-pip', 'curl']
+    state: latest
+    become: true
+    update_cache: true
+
+- name: Pip install awscli
+  pip:
+    name: awscli
+
+

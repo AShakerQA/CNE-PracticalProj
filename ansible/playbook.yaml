@@ -11,4 +11,9 @@
 - hosts: nginx
   become: true
   roles:
-  - nginx 
+  - nginx
+
+- hosts: aws-cli
+  become: true
+  roles:
+  - aws-cli
