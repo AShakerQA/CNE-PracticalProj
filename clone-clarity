@@ -1,0 +1,6 @@
+#! /bin/bash
+
+if ![ -d "CNE-PracticalProj"]
+then 
+  git clone https://github.com/AShakerQA/CNE-PracticalProj.git
+fi
