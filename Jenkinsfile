@@ -10,7 +10,7 @@ pipeline{
     }
     stage('push to dockerhub'){
       steps {
-      sh 'sudo docker login -u abdulshaker -p ${password}'
+      sh 'sudo docker login -u abdulshaker -p Abdulshaker1234
       sh 'sudo docker push abdulshaker/backend'
       sh 'sudo docker push abdulshaker/frontend'
       sh 'sudo docker push abdulshaker/database'
