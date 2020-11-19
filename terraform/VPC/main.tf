@@ -27,3 +27,8 @@ resource "aws_route_table_association" "rt_association" {
   route_table_id = aws_route_table.rt.id
 }
 
+resource "aws_subnet" "subnet_b"{
+  vpc_id = aws_vpc.vpc.id
+  cidr_block = var.subnet_cidr_block_2
+  availability_zone = "eu-west-1b"
+}
