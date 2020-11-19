@@ -7,10 +7,6 @@ variable "ami_id" {
   default = "ami-0dc8d444ee2a42d8a"
 }
 
-variable "key_name" {
-  default = "shakepc"
-}
-
 variable "subnet_id" {
   description = "subnet id for EC2"
 }
