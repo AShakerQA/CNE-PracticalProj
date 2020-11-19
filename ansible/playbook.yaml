@@ -1,0 +1,14 @@
+- hosts: docker
+  become: true
+  roles: 
+  - docker
+
+- hosts: jenkins
+  become: true
+  roles: 
+  - jenkins
+
+- hosts: nginx
+  become: true
+  roles:
+  - nginx 
