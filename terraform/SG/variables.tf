@@ -2,7 +2,7 @@ variable "web_sg_name" {
   default = "default_web_sg"
 }
 
-variable "sg_web_description" {
+variable "web_sg_description" {
   default = "allow ssh connection"
 }
 

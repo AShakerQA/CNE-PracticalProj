@@ -5,7 +5,7 @@ resource "aws_vpc" "vpc" {
 
 resource "aws_subnet" "subnet_a" {
   vpc_id            = aws_vpc.vpc.id
-  cidr_block        = var.subnet_cidr_block
+  cidr_block        = var.sg_cidr_block
   availability_zone = "eu-west-1a"
 }
 
@@ -34,7 +34,7 @@ resource "aws_subnet" "subnet_b"{
 }
 
 resource "aws_subnet" "subnet_c"{
-  vpc_id = aws_vpc.vpc_id
+  vpc_id = aws_vpc.vpc.id
   cidr_block = var.cidr_block_3
   availability_zone = "eu-west-1c"
 }
