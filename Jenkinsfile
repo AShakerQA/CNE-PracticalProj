@@ -9,10 +9,10 @@ pipeline{
       }
     }
     stage('push to dockerhub'){
-      sh 'sudo docker login -u abdulshaker -p ${password}
-      sudo docker push abdulshaker/backend
-      sudo docker push abdulshaker/frontend
-      sudo docker push abdulshaker/database
+      sh 'sudo docker login -u abdulshaker -p ${password}'
+      sh 'sudo docker push abdulshaker/backend'
+      sh 'sudo docker push abdulshaker/frontend'
+      sh 'sudo docker push abdulshaker/database'
     }
   }
 }
