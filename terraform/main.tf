@@ -12,7 +12,7 @@ module "sg_node" {
   source        = "./SG"
   open_internet = "0.0.0.0/0"
   vpc_id        = module.vpc.vpc_id
-  ingress_ports = 22
+  ingress_ports = [22, 80, 3306, 8080]
 }
 
 module "ec2" {
