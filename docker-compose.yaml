@@ -7,7 +7,7 @@ services:
     image: backend
     build: ./backend
     environment:
-      DATABASE_URI: mysql+pymysql://root:password@database:3306/users
+      DATABASE_URI: mysql+pymysql://admin:Password1234@database:3306/users
       SECRET KEY: Password1234!
   mysql:
     image: mysql:5.7
