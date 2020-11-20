@@ -27,5 +27,12 @@ pipeline{
         sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/mysql.yaml'
       }
     }
+    stage('pytest automaton'){
+      steps{
+        sh 'chmod +x utility.sh'
+        sh './utility.sh'
+      }
+    }
+
   }
 }
