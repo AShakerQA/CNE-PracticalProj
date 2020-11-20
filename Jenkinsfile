@@ -18,7 +18,13 @@ pipeline{
     }
     stage ('deploying app using kubernetes'){
       steps{
+        sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/secrets.yaml'
         sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/deploy.yaml'
+        sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/nginx-lb.yaml'
+        sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/configmap.yaml'
+        sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/frontend.yaml'
+        sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/backend.yaml'
+        sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/mysql.yaml'
       }
     }
   }
