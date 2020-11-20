@@ -3,17 +3,29 @@ services:
   frontend:
     image: frontend
     build: ./frontend
+    container_name: frontend
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+
   backend:
     image: backend
     build: ./backend
+    container_name: backend
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
     environment:
-      DATABASE_URI: mysql+pymysql://admin:Password1234@database:3306/users
+      DATABASE_URI: mysql+pymysql://admin:Password1234@terraform-20201120122208109300000001.coaea37d1emt.eu-west-1.rds.amazonaws.com:3306/users
+      TEST_DATABASE_URI: mysql+pymysql://admin:Password1234@terraform-20201120122208109300000001.coaea37d1emt.eu-west-1.rds.amazonaws.com:3306/testdb
       SECRET KEY: Password1234!
   mysql:
     image: mysql:5.7
     build: ./database
     environment:
-      - MYSQL_ROOT_PASSWORD=Password1234!  
+      - MYSQL_ROOT_PASSWORD=Password1234!
   nginx:
     image: nginx:latest
     ports:
