@@ -18,7 +18,7 @@ pipeline{
     }
     stage ('deploying app using kubernetes'){
       steps{
-        sh 'kubectl apply -f deploy.yaml'
+        sh 'kubectl apply -f d/var/lib/jenkins/workspace/JenkinsExample/kubernetes/deploy.yaml'
       }
     }
   }
