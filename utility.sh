@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ssh 18.202.55.31 << EOF
+ssh 54.171.126.241 << EOF
 
 git clone https://github.com/LukeBenson/install-scripts.git
 cd install-scripts/
