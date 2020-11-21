@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ssh -i /var/lib/jenkins/.ssh/id_rsa ubuntu@54.171.126.241 << EOF
+ssh -tt -i /var/lib/jenkins/.ssh/id_rsa ubuntu@54.171.126.241 << EOF
 
 git clone https://github.com/LukeBenson/install-scripts.git
 cd install-scripts/
@@ -13,9 +13,9 @@ git clone https://github.com/AShakerQA/CNE-PracticalProj.git
 cd CNE-PracticalProj
 git checkout jenkins
 
-docker-compose up -d
-docker exec backend bash -c "pytest tests/ --cov application"
-docker exec frontend bash -c "pytest tests/ --cov application"
+sudo docker-compose up -d
+sudo docker exec backend bash -c "pytest tests/ --cov application"
+sudo docker exec frontend bash -c "pytest tests/ --cov application"
 
 docker-compose down -d
 
