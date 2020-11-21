@@ -23,9 +23,9 @@ module "ec2" {
 }
 
 module "eks" {
-  source = "./EKS"
-  sub1 = module.vpc.subnet_b_id
-  sub2 = module.vpc.subnet_c_id
+  source      = "./EKS"
+  sub1        = module.vpc.subnet_b_id
+  sub2        = module.vpc.subnet_c_id
   security_id = module.sg_node.sg_id
 }
 
