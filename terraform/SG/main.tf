@@ -6,11 +6,11 @@ resource "aws_security_group" "web_sg" {
   dynamic "ingress" {
     iterator = port
     for_each = var.ingress_ports
-    content{
-    from_port   = port.value
-    protocol    = "tcp"
-    to_port     = port.value
-    cidr_blocks = [var.open_internet]
+    content {
+      from_port   = port.value
+      protocol    = "tcp"
+      to_port     = port.value
+      cidr_blocks = [var.open_internet]
     }
   }
 
