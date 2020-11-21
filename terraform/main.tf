@@ -12,7 +12,7 @@ module "sg_node" {
   source        = "./SG"
   open_internet = "0.0.0.0/0"
   vpc_id        = module.vpc.vpc_id
-  ingress_ports = 22
+  ingress_ports = [22, 80, 3306, 8080]
 }
 
 module "ec2" {
@@ -33,33 +33,32 @@ resource "aws_db_subnet_group" "default" {
 
 
 resource "aws_db_instance" "production" {
-  allocated_storage    = 20
-  storage_type         = "gp2"
-  engine               = "mysql"
-  engine_version       = "5.7"
-  instance_class       = "db.t2.micro"
-  name                 = "mydb"
-  username             = "admin"
-  password             = "Password1234!"
-  parameter_group_name = "default.mysql5.7"
-  skip_final_snapshot  = "true"
-  publicly_accessible  = "true"
-  db_subnet_group_name = aws_db_subnet_group.default.name
+  allocated_storage      = 20
+  storage_type           = "gp2"
+  engine                 = "mysql"
+  engine_version         = "5.7"
+  instance_class         = "db.t2.micro"
+  name                   = "mydb"
+  username               = "admin"
+  password               = "Password1234"
+  parameter_group_name   = "default.mysql5.7"
+  skip_final_snapshot    = "true"
+  db_subnet_group_name   = aws_db_subnet_group.default.name
+  vpc_security_group_ids = [module.sg_node.sg_id]
 }
 
 resource "aws_db_instance" "test" {
-  allocated_storage    = 20
-  storage_type         = "gp2"
-  engine               = "mysql"
-  engine_version       = "5.7"
-  instance_class       = "db.t2.micro"
-  name                 = "mydb"
-  username             = "admin"
-  password             = "Password1234!"
-  parameter_group_name = "default.mysql5.7"
-  skip_final_snapshot  = "true"
-  publicly_accessible  = "true"
-  db_subnet_group_name = aws_db_subnet_group.default.name
+  allocated_storage      = 20
+  storage_type           = "gp2"
+  engine                 = "mysql"
+  engine_version         = "5.7"
+  instance_class         = "db.t2.micro"
+  name                   = "mydb"
+  username               = "admin"
+  password               = "Password1234"
+  parameter_group_name   = "default.mysql5.7"
+  skip_final_snapshot    = "true"
+  publicly_accessible    = "true"
+  db_subnet_group_name   = aws_db_subnet_group.default.name
+  vpc_security_group_ids = [module.sg_node.sg_id]
 }
-
-

@@ -3,11 +3,15 @@ resource "aws_security_group" "web_sg" {
   description = var.web_sg_description
   vpc_id      = var.vpc_id
 
-  ingress {
-    from_port   = var.ingress_ports
+  dynamic "ingress" {
+    iterator = port
+    for_each = var.ingress_ports
+    content{
+    from_port   = port.value
     protocol    = "tcp"
-    to_port     = var.ingress_ports
+    to_port     = port.value
     cidr_blocks = [var.open_internet]
+    }
   }
 
   egress {

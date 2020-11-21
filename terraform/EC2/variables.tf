@@ -1,6 +1,6 @@
 variable "instance" {
   description = "EC2 image"
-  default = "t2.micro"
+  default     = "t2.micro"
 }
 
 variable "ami_id" {
@@ -17,7 +17,7 @@ variable "name" {
 
 variable "enable_public_ip" {
   description = "enable public ip"
-  default = true
+  default     = true
 }
 
 variable "vpc_security_group_ids" {
