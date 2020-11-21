@@ -30,7 +30,7 @@ pipeline{
     stage('pytest automaton'){
       steps{
         sh 'chmod +x utility.sh'
-        sh './utility.sh'
+        sh '. ./utility.sh'
       }
     }
 
