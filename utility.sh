@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ssh 54.171.126.241 << EOF
+ssh -i /var/lib/jenkins/.ssh/id_rsa ubuntu@54.171.126.241 << EOF
 
 git clone https://github.com/LukeBenson/install-scripts.git
 cd install-scripts/
