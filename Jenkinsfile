@@ -3,9 +3,17 @@ pipeline{
   stages {
     stage('build front end and backend images'){
       steps {
+        sh 'sudo su - jenkins'
+        sh 'sudo usermod -aG docker jenkins'
         sh 'sudo docker build -t abdulshaker/backend ./backend/'
         sh 'sudo docker build -t abdulshaker/frontend ./frontend/'
         sh 'sudo docker build -t abdulshaker/database ./database/'
+      }
+    }
+    stage('pytest automaton'){
+      steps{
+        sh 'chmod +x utility.sh'
+        sh '. ./utility.sh'
       }
     }
     stage('push to dockerhub'){
@@ -27,12 +35,5 @@ pipeline{
         sh 'kubectl apply -f /var/lib/jenkins/workspace/JenkinsExample/kubernetes/mysql.yaml'
       }
     }
-    stage('pytest automaton'){
-      steps{
-        sh 'chmod +x utility.sh'
-        sh '. ./utility.sh'
-      }
-    }
 
   }
-}
