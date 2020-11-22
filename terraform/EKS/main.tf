@@ -1,5 +1,5 @@
 resource "aws_eks_cluster" "eks" {
-  name     = "example"
+  name     = "cne_cluster"
   role_arn = var.arnrole
 
   vpc_config {
@@ -8,9 +8,9 @@ resource "aws_eks_cluster" "eks" {
   }
 }
 
-resource "aws_eks_node_group" "eks_node" {
-  cluster_name    = "eks cluster node"
-  node_group_name = "default"
+resource "aws_eks_node_group" "node" {
+  cluster_name    = aws_eks_cluster.eks.name
+  node_group_name = "node"
   node_role_arn   = var.arnnode
   subnet_ids      = [var.sub1, var.sub2]
   instance_types  = var.instance_type
