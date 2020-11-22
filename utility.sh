@@ -1,6 +1,6 @@
 #! /bin/bash
 
-ssh -tt -i /var/lib/jenkins/.ssh/id_rsa ubuntu@54.171.126.241 << EOF
+ssh -tt -i /var/lib/jenkins/.ssh/id_rsa ubuntu@52.16.102.105 << EOF
 
 if [ ! -d install-scripts/ ]; then
   git clone https://github.com/LukeBenson/install-scripts.git
