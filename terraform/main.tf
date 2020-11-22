@@ -22,12 +22,12 @@ module "ec2" {
   vpc_security_group_ids = [module.sg_node.sg_id]
 }
 
-module "eks" {
-  source      = "./EKS"
-  sub1        = module.vpc.subnet_b_id
-  sub2        = module.vpc.subnet_c_id
-  security_id = module.sg_node.sg_id
-}
+#module "eks" {
+#  source      = "./EKS"
+#  sub1        = module.vpc.subnet_b_id
+#  sub2        = module.vpc.subnet_c_id
+#  security_id = module.sg_node.sg_id
+#}
 
 
 
