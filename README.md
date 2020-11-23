@@ -103,3 +103,7 @@ After run: ansible-playbook -i inventory.conf playbook.yaml --key-file "~/.ssh/i
 * use the kubernetes role to deploy eks using terraform
 * slurp Jenkins password and auto add
 * automate more tedious tasks such as the inventory file taking variables (tried and didnt work)
+
+## Authors
+
+Abdul Shaker
