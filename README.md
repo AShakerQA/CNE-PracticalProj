@@ -4,6 +4,18 @@ This application is a simple [Flask application](https://flask.palletsprojects.c
 
 The following information should be everything you need to complete the project.
 
+## Contents
+* [Brief](#brief)
+* [Application](#Application)
+* [Project Management](#Project-Management)
+* [Testing](#Testing)
+* [Database Connection](#Database-Connection)
+* [Environment Variables](#Environment-variables)
+* [Infrastructure](#Infrastructure)
+* [User Info](#User-Info)
+* [Starting Up](#Starting-Up)
+* [Authors](#Authors)
+
 ## Brief
 
 The application must:
