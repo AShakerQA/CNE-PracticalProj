@@ -15,7 +15,6 @@ if [ ! -d CNE-PracticalProj/ ]; then
   git clone https://github.com/AShakerQA/CNE-PracticalProj.git
 fi
 cd CNE-PracticalProj/
-git checkout eks
 
 if ! which sql > /dev/null; then
   sudo apt-get update
