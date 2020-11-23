@@ -13,7 +13,7 @@ fi
 
 if [ ! -d CNE-PracticalProj/ ]; then
 git clone https://github.com/AShakerQA/CNE-PracticalProj.git
-cd CNE-PracticalProj
+cd CNE-PracticalProj/
 git checkout eks
 fi
 
