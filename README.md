@@ -8,6 +8,7 @@ The following information should be everything you need to complete the project.
 * [Brief](#brief)
 * [Application](#Application)
 * [Project Management](#Project-Management)
+* [Risk Assessment](#Risk-Assessment)
 * [Testing](#Testing)
 * [Database Connection](#Database-Connection)
 * [Environment Variables](#Environment-variables)
@@ -44,7 +45,7 @@ Jira was utilised to track the progress of the project available at:
 ![jiraboardsc](https://user-images.githubusercontent.com/71396007/99922985-44708300-2d2b-11eb-97db-6be2fbbf84f2.png)
 
 ## Risk Assessment
-![RiskAssessment](https://user-images.githubusercontent.com/71396007/96352828-72283380-10be-11eb-9be6-a7a267096d85.png)
+![riskassessment](https://user-images.githubusercontent.com/71396007/99925269-5eaf5e80-2d35-11eb-8b34-7fde7d7396cb.png)
 
 ## Testing
 Using pytest had with 100% on coverage tests as well as a successful Jenkins build.
