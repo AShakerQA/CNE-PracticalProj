@@ -43,6 +43,9 @@ Jira was utilised to track the progress of the project available at:
 [here] (https://qac1.atlassian.net/secure/RapidBoard.jspa?rapidView=2&view=planning.nodetail&selectedIssue=CNEP-17&issueLimit=100)
 ![jiraboardsc](https://user-images.githubusercontent.com/71396007/99922985-44708300-2d2b-11eb-97db-6be2fbbf84f2.png)
 
+## Risk Assessment
+![RiskAssessment](https://user-images.githubusercontent.com/71396007/96352828-72283380-10be-11eb-9be6-a7a267096d85.png)
+
 ## Testing
 Using pytest had with 100% on coverage tests as well as a successful Jenkins build.
 ![Jenkinsbuild](https://user-images.githubusercontent.com/71396007/99924520-9a94f480-2d32-11eb-8c27-9eb8b58b16ba.png)
