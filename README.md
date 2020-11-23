@@ -86,3 +86,20 @@ The SSH IP in the Jenkinsfile needs to be replaced with the IP of the new manual
 
 The outputs of terraform apply include the ip for the Jenkins VM and the two database End points.
 After run: ansible-playbook -i inventory.conf playbook.yaml --key-file "~/.ssh/id_rsa" which configures the environment for the Jenkins VM.
+
+## Starting up
+
+* ssh into Jenkins VM
+* sudo visudo and add Jenkins with NOPASSWD:ALL and add jenkins to docker group
+* sudo su - jenkins
+* sudo cat /var/lib/jenkins/secrets/initialAdminPassword then manually enter into Jenkins GUI
+* docker login
+* aws eks --region (region) update-kubeconfig --name (cluster_name)
+* Database is setup using the utility.sh, mysql -h (endpoint) - P 3306 -u (username) -p(password)
+* either ssh once manually or turn of strict key checking and run the jenkinsfile to access the testVM
+
+## Future Updates
+* More secure, including variable usage
+* use the kubernetes role to deploy eks using terraform
+* slurp Jenkins password and auto add
+* automate more tedious tasks such as the inventory file taking variables (tried and didnt work)
