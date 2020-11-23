@@ -1,0 +1,25 @@
+- hosts: docker
+  become: true
+  roles: 
+  - docker
+
+- hosts: jenkins
+  become: true
+  roles: 
+  - jenkins
+
+- hosts: nginx
+  become: true
+  roles:
+  - nginx
+
+- hosts: awscli
+  become: true
+  roles:
+  - awscli
+
+- hosts: all
+  become: true
+  tasks:
+    - name: install kubectl
+      script: /home/shaker_abdul/sfia2/cne-sfia2-brief/kubernetes_install.sh
