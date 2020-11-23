@@ -109,12 +109,15 @@ After run: ansible-playbook -i inventory.conf playbook.yaml --key-file "~/.ssh/i
 * aws eks --region (region) update-kubeconfig --name (cluster_name)
 * Database is setup using the utility.sh, mysql -h (endpoint) - P 3306 -u (username) -p(password)
 * either ssh once manually or turn of strict key checking and run the jenkinsfile to access the testVM
+* configure a webhook for jenkins
 
 ## Future Updates
-* More secure, including variable usage
-* use the kubernetes role to deploy eks using terraform
-* slurp Jenkins password and auto add
+* More secure, including variable usage for endpoints and ips
+* use the kubernetes role to deploy eks using terraform (files already avaiable -- time consuming)
+* slurp Jenkins password and auto add using a register in ansible role
 * automate more tedious tasks such as the inventory file taking variables (tried and didnt work)
+* internal server error 500, nginx could not get frontend and backend to communicate (curl frontend container to see what it should be)
+
 
 ## Authors
 
