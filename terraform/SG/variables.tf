@@ -11,14 +11,14 @@ variable "open_internet" {
 }
 
 variable "ingress_ports" {
-  type = list(number)
+  type        = list(number)
   description = "ingress ports"
-  default = [22, 80, 3306, 8080]
+  default     = [22, 80, 3306, 8080]
 }
 
 variable "egress_ports" {
   description = "allow all egress"
-  default = 0
+  default     = 0
 }
 
 variable "vpc_id" {

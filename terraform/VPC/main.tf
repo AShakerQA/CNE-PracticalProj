@@ -27,16 +27,24 @@ resource "aws_route_table_association" "rt_association" {
   route_table_id = aws_route_table.rt.id
 }
 
-resource "aws_subnet" "subnet_b"{
-  vpc_id = aws_vpc.vpc.id
-  cidr_block = var.cidr_block_2
+resource "aws_subnet" "subnet_b" {
+  vpc_id            = aws_vpc.vpc.id
+  cidr_block        = var.cidr_block_2
   availability_zone = "eu-west-1b"
+  tags = {
+    "kubernetes.io/cluster/cne_cluster" = "shared"
+  }
+
 }
 
-resource "aws_subnet" "subnet_c"{
-  vpc_id = aws_vpc.vpc.id
-  cidr_block = var.cidr_block_3
+resource "aws_subnet" "subnet_c" {
+  vpc_id            = aws_vpc.vpc.id
+  cidr_block        = var.cidr_block_3
   availability_zone = "eu-west-1c"
+  tags = {
+    "kubernetes.io/cluster/cne_cluster" = "shared"
+  }
+
 }
 
 

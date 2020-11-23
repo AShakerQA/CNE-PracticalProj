@@ -22,6 +22,16 @@ module "ec2" {
   vpc_security_group_ids = [module.sg_node.sg_id]
 }
 
+#module "eks" {
+#  source      = "./EKS"
+#  sub1        = module.vpc.subnet_b_id
+#  sub2        = module.vpc.subnet_c_id
+#  security_id = module.sg_node.sg_id
+#}
+
+
+
+
 resource "aws_db_subnet_group" "default" {
   name       = "main"
   subnet_ids = [module.vpc.subnet_b_id, module.vpc.subnet_c_id]
@@ -62,3 +72,4 @@ resource "aws_db_instance" "test" {
   db_subnet_group_name   = aws_db_subnet_group.default.name
   vpc_security_group_ids = [module.sg_node.sg_id]
 }
+
