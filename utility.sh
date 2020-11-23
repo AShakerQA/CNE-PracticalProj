@@ -12,15 +12,15 @@ if [ ! -d install-scripts/ ]; then
 fi
 
 if [ ! -d CNE-PracticalProj/ ]; then
-git clone https://github.com/AShakerQA/CNE-PracticalProj.git
-cd CNE-PracticalProj/
-git checkout eks
+  git clone https://github.com/AShakerQA/CNE-PracticalProj.git
+  cd CNE-PracticalProj/
+  git checkout eks
 fi
 
 
 if ! which sql > /dev/null; then
-sudo apt-get update
-sudo apt install mysql-client-core-5.7
+  sudo apt-get update
+  sudo apt install mysql-client-core-5.7
 fi
 
 mysql -h terraform-20201122151346712900000002.coaea37d1emt.eu-west-1.rds.amazonaws.com -P 3306 -u admin -pPassword1234 < ~/CNE-PracticalProj/database/Create.sql;
