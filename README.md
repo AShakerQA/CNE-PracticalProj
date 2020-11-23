@@ -25,6 +25,17 @@ The application works by:
 2. The backend service using a database connection to query the database and return a result.
 3. The frontend service serving up a simple HTML (`index.html`) to display the result.
 
+## Project Management 
+
+Jira was utilised to track the progress of the project available at:
+[here] (https://qac1.atlassian.net/secure/RapidBoard.jspa?rapidView=2&view=planning.nodetail&selectedIssue=CNEP-17&issueLimit=100)
+![jiraboardsc](https://user-images.githubusercontent.com/71396007/99922985-44708300-2d2b-11eb-97db-6be2fbbf84f2.png)
+
+## Testing
+Using pytest had with 100% on coverage tests as well as a successful Jenkins build.
+![jenkins](https://user-images.githubusercontent.com/71396007/99923097-045dd000-2d2c-11eb-9c74-8baf99f5bdfe.png)
+![coveragereport](https://user-images.githubusercontent.com/71396007/99923189-8221db80-2d2c-11eb-96fc-fec7f51ab185.png)
+
 ### Database Connection
 
 The database connection is handled in the `./backend/application/__init__.py` file.
