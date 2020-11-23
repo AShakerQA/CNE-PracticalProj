@@ -45,7 +45,7 @@ Jira was utilised to track the progress of the project available at:
 
 ## Testing
 Using pytest had with 100% on coverage tests as well as a successful Jenkins build.
-![jenkins](https://user-images.githubusercontent.com/71396007/99923097-045dd000-2d2c-11eb-9c74-8baf99f5bdfe.png)
+![Jenkinsbuild](https://user-images.githubusercontent.com/71396007/99924520-9a94f480-2d32-11eb-8c27-9eb8b58b16ba.png)
 ![coveragereport](https://user-images.githubusercontent.com/71396007/99923189-8221db80-2d2c-11eb-96fc-fec7f51ab185.png)
 
 ### Database Connection
